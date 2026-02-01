@@ -1,0 +1,215 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Roboto Mono', monospace;
+  overflow-x: hidden;
+}
+
+.status-container {
+  height: 100vh;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeIn 1.2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.left-side {
+  flex: 1;
+  background: #c41e3a;
+  position: relative;
+  overflow: hidden;
+}
+
+.right-side {
+  flex: 1.5;
+  background: #000;
+  padding: 40px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.character-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-35%, -50%);
+  width: 95%;
+  height: 115%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.character {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Социальные иконки — общий контейнер */
+.social-icons {
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  z-index: 3;
+}
+
+/* Каждая иконка */
+.card-wrapper {
+  width: 100px;
+  height: 100px;
+  perspective: 1400px;
+}
+
+/* Базовый стиль карточки */
+.card-3d {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease-out;
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+}
+
+/* Индивидуальные стили для каждой иконки */
+#card3d {        /* Telegram */
+  width: 200%;
+  height: 200%;
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#card-github {   /* GitHub */
+  width: 100%;
+  height: 100%;
+  transition: transform 0.38s cubic-bezier(0.2, 0.59, 0.265, 1.3);
+}
+
+#card-vk {       /* VK */
+  width: 85%;
+  height: 85%;
+  transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-wrapper:nth-child(1) {   /* Telegram */
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.card-wrapper:nth-child(2) {   /* GitHub */
+  margin-left: 75px;
+  margin-top: 120px;
+}
+
+.card-wrapper:nth-child(3) {   /* VK */
+  margin-left: 45px;
+  margin-top: 90px;
+}
+
+.card-3d img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+}
+
+.text-content {
+  margin-left: auto;
+  max-width: 540px;
+  padding-right: 80px;
+}
+
+.name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4.2rem;
+  letter-spacing: 4px;
+  margin-bottom: 0.3em;
+}
+
+.name .red {
+  color: #c41e3a;
+}
+
+.info {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 1.2em 0 2em;
+}
+
+.info .red {
+  color: #c41e3a;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 1.05rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.test-section {
+  background: #000;
+  padding: 80px 10%;
+  min-height: 100vh;
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: #ccc;
+}
+
+.test-section p {
+  margin-bottom: 1.4em;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateX(60px); 
+  animation: revealText 0.9s ease-out forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+/* Сама анимация */
+@keyframes revealText {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateX(80px) scale(0.96);
+  animation: revealText 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Более драматичный вариант (с лёгким размытием) */
+.reveal {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateX(100px);
+  animation: revealText 2.0s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes revealText {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
