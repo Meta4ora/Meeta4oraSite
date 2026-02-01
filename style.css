@@ -41,6 +41,42 @@ body {
   position: relative;
 }
 
+.quote {
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  color: #e0e0e0;
+  text-align: center;
+  margin: 1.2em 0 0.5em;
+  opacity: 0.9;
+  position: relative;
+  padding: 0 1.5em;
+}
+
+.quote::before,
+.quote::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c41e3a88, transparent);
+  top: 50%;
+}
+
+.quote::before { left: 0; }
+.quote::after  { right: 0; }
+
+.quote-mark {
+  color: #c41e3a;
+  font-size: 2.2rem;
+  line-height: 1;
+  position: relative;
+  top: 0.15em;
+  opacity: 0.7;
+}
+
 .character-wrapper {
   position: absolute;
   left: 50%;
@@ -179,7 +215,7 @@ body {
 
 .reveal {
   opacity: 0;
-  transform: translateX(60px); 
+  transform: translateX(40px); 
   animation: revealText 0.9s ease-out forwards;
   animation-delay: var(--delay, 0s);
 }
