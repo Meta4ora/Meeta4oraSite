@@ -1,5 +1,3 @@
-Meta4oraSite
-
 ---
 
 <div align="center">
