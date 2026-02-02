@@ -95,7 +95,6 @@ body {
   object-position: left center;
 }
 
-/* Социальные иконки — общий контейнер */
 .social-icons {
   position: absolute;
   top: 10%;
@@ -106,14 +105,12 @@ body {
   z-index: 3;
 }
 
-/* Каждая иконка */
 .card-wrapper {
   width: 100px;
   height: 100px;
   perspective: 1400px;
 }
 
-/* Базовый стиль карточки */
 .card-3d {
   width: 100%;
   height: 100%;
@@ -220,7 +217,6 @@ body {
   animation-delay: var(--delay, 0s);
 }
 
-/* Сама анимация */
 @keyframes revealText {
   to {
     opacity: 1;
@@ -234,7 +230,6 @@ body {
   animation: revealText 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-/* Более драматичный вариант (с лёгким размытием) */
 .reveal {
   opacity: 0;
   filter: blur(6px);
@@ -247,5 +242,91 @@ body {
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .status-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    padding: 20px 0;
+  }
+
+  .left-side {
+    display: none;
+  }
+
+  .right-side {
+    flex: none;
+    padding: 30px 20px;
+    width: 100%;
+  }
+
+  .character-wrapper {
+    display: none;
+  }
+
+  .text-content {
+    margin: 0 auto;
+    max-width: 100%;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .name {
+    font-size: 3.2rem;
+    margin-bottom: 0.4em;
+  }
+
+  .info {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .quote {
+    font-size: 1.1rem;
+    padding: 0 1em;
+  }
+
+  .social-icons {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    max-width: 360px;
+    margin: 50px auto 40px;
+    padding: 0 15px;
+  }
+
+  .card-wrapper {
+    margin: 0 !important;
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    perspective: none;
+  }
+
+  .card-3d,
+  #card3d,
+  #card-github,
+  #card-vk {
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+    transition: none !important;
+    transform-style: flat !important;
+  }
+
+  .card-3d img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 4px 10px rgba(196, 30, 58, 0.25));
   }
 }
