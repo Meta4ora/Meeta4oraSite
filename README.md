@@ -4,8 +4,6 @@ Meta4oraSite Readme - Дополненный
 
 <div align="center">
 
-<img src="https://github.com/Meta4ora/Meeta4oraSite/raw/main/public/preview.png" alt="Meta4ora Status Preview" width="800"/>
-
 <h1>Meeta4oraSite</h1>
 
 <p>
