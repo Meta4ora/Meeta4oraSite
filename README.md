@@ -1,4 +1,4 @@
-Meta4oraSite Readme - Дополненный
+Meta4oraSite
 
 ---
 
