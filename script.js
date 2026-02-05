@@ -1,5 +1,5 @@
 const cards = {
-  telegram: document.getElementById('card3d'),
+  telegram: document.getElementById('cardTg'),
   github: document.getElementById('card-github'),
   vk: document.getElementById('card-vk')
 };
@@ -48,3 +48,28 @@ document.addEventListener('mouseleave', () => {
     }
   });
 });
+
+document.getElementById('cardTg').onclick = function() {
+    openSocial('cardTg');
+};
+document.getElementById('card-vk').onclick = function() {
+    openSocial('card-vk');
+};
+document.getElementById('card-github').onclick = function() {
+    openSocial('card-github');
+};
+
+function openSocial(s) {
+  switch (s){
+    case 'cardTg':
+      window.open('https://t.me/MetaforaTheGreatest', '_blank');
+      break;
+    case 'card-vk':
+      window.open('https://vk.com/meta4ora', '_blank');
+      break;
+    case 'card-github':
+      window.open('https://github.com/Meta4ora', '_blank');
+      break;
+  };
+}
+
