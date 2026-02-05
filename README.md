@@ -1,5 +1,3 @@
----
-
 <div align="center">
 
 <h1>Meeta4oraSite</h1>
